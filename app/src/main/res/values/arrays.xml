@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="images">
+        <item>http://ww3.sinaimg.cn/large/610dc034jw1f7rmrmrscrj20u011hgp1.jpg</item>
+        <item>http://ww1.sinaimg.cn/large/610dc034jw1f7qgschtz8j20hs0hsac7.jpg</item>
+        <item>http://ww2.sinaimg.cn/large/610dc034jw1f7mixvc7emj20ku0dv74p.jpg</item>
+        <item>http://ww1.sinaimg.cn/large/610dc034jw1f7lughzrjmj20u00k9jti.jpg</item>
+        <item>http://ww1.sinaimg.cn/large/610dc034jw1f7kpy9czh0j20u00vn0us.jpg</item>
+        <item>http://ww2.sinaimg.cn/large/610dc034jw1f7jkj4hl41j20u00mhq68.jpg</item>
+        <item>http://ww1.sinaimg.cn/large/610dc034jw1f7hu7d460oj20u00u075u.jpg</item>
+        <item>http://ww1.sinaimg.cn/large/610dc034jw1f7ef7i5m1zj20u011hdjm.jpg</item>
+        <item>http://ww3.sinaimg.cn/large/610dc034jw1f7d97id9mbj20u00u0q4g.jpg</item>
+        <item>http://ww4.sinaimg.cn/large/610dc034jw1f7cmpd95iaj20u011hjtt.jpg</item>
+    </string-array>
+</resources>
