@@ -83,7 +83,7 @@ public class PhotoTouchView extends LinearLayout implements TouchViewPager.OnPag
      *
      * @param beanList 图片的数据源,由一组Bean组成,bean必须实现ImageUrl接口
      */
-    public void showImages(List<ImageUrl> beanList) {
+    public void showImages(List<? extends ImageUrl> beanList) {
         mImageList.clear();
         for (ImageUrl bean : beanList) {
             mImageList.add(bean.getUrl());
@@ -99,7 +99,7 @@ public class PhotoTouchView extends LinearLayout implements TouchViewPager.OnPag
      * @param beanList
      * @param currentIndex
      */
-    public void showImages(List<ImageUrl> beanList, int currentIndex) {
+    public void showImages(List<? extends ImageUrl> beanList, int currentIndex) {
         mImageList.clear();
         for (ImageUrl bean : beanList) {
             mImageList.add(bean.getUrl());

@@ -1,12 +1,14 @@
 ## PhotoTouchView ##
 > 该库是一个Android图片查看缩放控件,在[PinchImageView](https://github.com/boycy815/PinchImageView)基础上进一步封装,主要功能:
 > 
-> - 网络和本地图片查看,支持双指手势,单双击事件
+> - 作为一个控件,可以在任意场景下使用(`Activity`,`Fragment`,`ViewGroup`)
+> - 网络和本地图片查看,支持双指缩放,双击缩放等
 > - 支持单图及多图查看
 > - 一键保存到本地相册
+> - 单击长按事件
 
 ## 引用 ##
-最新版本号[![](https://jitpack.io/v/ChenZhen-ZH/PhotoTouchView.svg)](https://jitpack.io/#ChenZhen-ZH/PhotoTouchView)
+最新版本号[![](https://jitpack.io/v/chenzhenboy/phototouchview.svg)](https://jitpack.io/#chenzhenboy/phototouchview)
 ### Gradle ###
 
 Project.gradle
@@ -20,7 +22,7 @@ Project.gradle
 
 app.gradle
 
-    compile 'com.github.ChenZhen-ZH:PhotoTouchView:v0.8.1'
+    compile 'com.github.chenzhenboy:phototouchview:1.0.1'
 
 ### Maven ###
 	<repositories>
@@ -48,6 +50,22 @@ app.gradle
 
 		mTouchView = (PhotoTouchView) findViewById(R.id.photo_view);
     	mTouchView.showImages(imageList);
+数据源支持:
+
+	    mTouchView.showImages(imageList);//String数组,默认当前显示第一张
+        mTouchView.showImages(imageList, 2);//String数组,指定当前显示index为2
+
+        //实现ImageUrl接口的Bean
+        List<TestBean> beanList = new ArrayList<>();
+        beanList.add(new TestBean());
+        mTouchView.showImages(beanList);
+		mTouchView.showImages(beanList,2);//指定index
+
+        mTouchView.showOneImage("url");//单张
+		
+		
+
+
 
 ## 扩展功能 ##
 1. 保存当前图片到本地相册
@@ -64,12 +82,27 @@ app.gradle
                 }
             });
 
+2. 图片的点击和长按事件
+
+		mTouchView.addListener(new PhotoListener() {
+            @Override
+            public void photoClick(int index, String url) {
+                
+            }
+
+            @Override
+            public void photoLongClick(int index, String url) {
+
+            }
+        });
+
 ## 效果图 ##
 
 ![](http://i.imgur.com/f03lEmW.jpg)
 
 ## 关于作者 ##
 
+- 简	书:[uncochen](http://www.jianshu.com/users/1695117cc969 )
 - 新浪微博:[@Chen丶振](http://weibo.com/724132180 )
 - Email:18620156376@163.com
 
