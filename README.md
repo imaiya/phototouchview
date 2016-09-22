@@ -1,5 +1,5 @@
 ## PhotoTouchView ##
-> 该库是一个Android图片查看缩放控件,在[PinchImageView](https://github.com/boycy815/PinchImageView)基础上进一步封装,主要功能:
+> 该库是一个Android图片查看缩放控件,在`PinchImageView`基础上进一步封装,主要功能:
 > 
 > - 作为一个控件,可以在任意场景下使用(`Activity`,`Fragment`,`ViewGroup`)
 > - 网络和本地图片查看,支持双指缩放,双击缩放等
@@ -109,3 +109,23 @@ app.gradle
 
 
 我会慢慢完善这个控件,加入更多的易用的API.大家有任何建议或者发现Bug都可以提Issues,也可以给我发邮件.
+
+## Thx ##
+
+#### [PinchImageView](https://github.com/boycy815/PinchImageView) ####
+
+## License ##
+
+    Copyright 2014 chenzhenboy
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
