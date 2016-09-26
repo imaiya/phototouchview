@@ -33,9 +33,9 @@ app.gradle
 	</repositories>
 ==
 	<dependency>
-	    <groupId>com.github.ChenZhen-ZH</groupId>
-	    <artifactId>PhotoTouchView</artifactId>
-	    <version>v0.8.1</version>
+	    <groupId>com.github.chenzhenboy</groupId>
+	    <artifactId>phototouchview</artifactId>
+	    <version>1.0.1</version>
 	</dependency>
 
 ## 使用 ##
