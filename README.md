@@ -116,7 +116,7 @@ app.gradle
 
 ## License ##
 
-    Copyright 2014 chenzhenboy
+    Copyright 2016 chenzhenboy
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
