@@ -22,7 +22,7 @@ Project.gradle
 
 app.gradle
 
-    compile 'com.github.chenzhenboy:phototouchview:1.0.1'
+    compile 'com.github.chenzhenboy:phototouchview:1.1.1'
 
 ### Maven ###
 	<repositories>
@@ -31,11 +31,12 @@ app.gradle
 		    <url>https://jitpack.io</url>
 		</repository>
 	</repositories>
-==
+and
+
 	<dependency>
 	    <groupId>com.github.chenzhenboy</groupId>
 	    <artifactId>phototouchview</artifactId>
-	    <version>1.0.1</version>
+	    <version>1.1.1</version>
 	</dependency>
 
 ## 使用 ##
@@ -50,7 +51,7 @@ app.gradle
 
 		mTouchView = (PhotoTouchView) findViewById(R.id.photo_view);
     	mTouchView.showImages(imageList);
-数据源支持:
+    数据源支持:
 
 	    mTouchView.showImages(imageList);//String数组,默认当前显示第一张
         mTouchView.showImages(imageList, 2);//String数组,指定当前显示index为2
@@ -59,8 +60,8 @@ app.gradle
         List<TestBean> beanList = new ArrayList<>();
         beanList.add(new TestBean());
         mTouchView.showImages(beanList);
-		mTouchView.showImages(beanList,2);//指定index
-
+        mTouchView.showImages(beanList,2);//指定index
+        
         mTouchView.showOneImage("url");//单张
 		
 		
@@ -95,6 +96,19 @@ app.gradle
 
             }
         });
+        
+3. 图片翻页回调
+
+        mTouchView.setChangeListener(new PhotoChangeListener() {
+             @Override
+             public void onPageChanged(int position) {
+                  //do str
+                  }
+             });
+             
+4. 指示器
+
+        mTouchView.setHideIndicator(true);//隐藏自带指示器(默认不隐藏)
 
 ## 效果图 ##
 

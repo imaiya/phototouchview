@@ -103,6 +103,7 @@ public class PhotoTouchView extends LinearLayout implements TouchViewPager.OnPag
         for (ImageUrl bean : beanList) {
             mImageList.add(bean.getUrl());
         }
+        mIndicator.initData(beanList.size(), 0);
         mAdapter.notifyDataSetChanged();
         if (mImageList != null && mImageList.size() > mCurrentIndex)
             mViewPager.setCurrentItem(mCurrentIndex);
@@ -120,10 +121,12 @@ public class PhotoTouchView extends LinearLayout implements TouchViewPager.OnPag
         for (ImageUrl bean : beanList) {
             mImageList.add(bean.getUrl());
         }
+        mIndicator.initData(beanList.size(), 0);
         mAdapter.notifyDataSetChanged();
         if (mImageList != null && mImageList.size() > currentIndex) {
             mCurrentIndex = currentIndex;
             mViewPager.setCurrentItem(mCurrentIndex);
+            mIndicator.setCurrentPage(mCurrentIndex);
         }
     }
 
@@ -136,16 +139,19 @@ public class PhotoTouchView extends LinearLayout implements TouchViewPager.OnPag
     public void showImages(ArrayList<String> imageList, int currentIndex) {
         mImageList.clear();
         mImageList.addAll(imageList);
+        mIndicator.initData(imageList.size(), 0);
         mAdapter.notifyDataSetChanged();
         if (mImageList != null && mImageList.size() > currentIndex) {
             mCurrentIndex = currentIndex;
             mViewPager.setCurrentItem(mCurrentIndex);
+            mIndicator.setCurrentPage(mCurrentIndex);
         }
     }
 
     public void showOneImage(String url) {
         mImageList.clear();
         mImageList.add(url);
+        mIndicator.initData(1, 0);
         mAdapter.notifyDataSetChanged();
         mCurrentIndex = 0;
         mViewPager.setCurrentItem(mCurrentIndex);
