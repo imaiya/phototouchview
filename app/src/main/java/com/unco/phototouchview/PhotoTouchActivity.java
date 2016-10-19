@@ -10,9 +10,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.unco.photoliarary.PhotoListener;
+import com.unco.photoliarary.callback.PhotoListener;
 import com.unco.photoliarary.PhotoTouchView;
-import com.unco.photoliarary.SaveImageCall;
+import com.unco.photoliarary.callback.SaveImageCall;
 
 import java.util.ArrayList;
 import java.util.Arrays;

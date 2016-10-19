@@ -1,0 +1,6 @@
+<resources>
+
+    <dimen name="circleInterval">4dp</dimen>
+    <dimen name="radius">3dp</dimen>
+
+</resources>

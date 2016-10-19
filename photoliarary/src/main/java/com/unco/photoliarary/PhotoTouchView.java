@@ -11,6 +11,11 @@ import android.widget.LinearLayout;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.unco.photoliarary.Indicator.DotIndicator;
+import com.unco.photoliarary.callback.PhotoChangeListener;
+import com.unco.photoliarary.callback.PhotoListener;
+import com.unco.photoliarary.callback.SaveImageCall;
+import com.unco.photoliarary.tool.BitmapUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +37,13 @@ public class PhotoTouchView extends LinearLayout implements TouchViewPager.OnPag
 
     private ArrayList<String> mImageList;
     private int mCurrentIndex;
+    private DotIndicator mIndicator;
+
+
+    private boolean hideIndicator = false;
+
+
+    private PhotoChangeListener mChangeListener;
 
     /*<=========================================共有方法===============================================>*/
 
@@ -62,6 +74,7 @@ public class PhotoTouchView extends LinearLayout implements TouchViewPager.OnPag
         if (mImageList != null && mImageList.size() > currentIndex) {
             mCurrentIndex = currentIndex;
             mViewPager.setCurrentItem(mCurrentIndex);
+            mIndicator.setCurrentPage(mCurrentIndex);
         }
     }
 
@@ -73,9 +86,11 @@ public class PhotoTouchView extends LinearLayout implements TouchViewPager.OnPag
     public void showImages(ArrayList<String> imageList) {
         mImageList.clear();
         mImageList.addAll(imageList);
+        mIndicator.initData(imageList.size(), 0);
         mAdapter.notifyDataSetChanged();
         mCurrentIndex = 0;
         mViewPager.setCurrentItem(mCurrentIndex);
+        mIndicator.setCurrentPage(mCurrentIndex);
     }
 
     /**
@@ -91,6 +106,7 @@ public class PhotoTouchView extends LinearLayout implements TouchViewPager.OnPag
         mAdapter.notifyDataSetChanged();
         if (mImageList != null && mImageList.size() > mCurrentIndex)
             mViewPager.setCurrentItem(mCurrentIndex);
+
     }
 
     /**
@@ -149,6 +165,24 @@ public class PhotoTouchView extends LinearLayout implements TouchViewPager.OnPag
         saveCurrent2local(imageCall);
     }
 
+    /**
+     * 翻页事件
+     *
+     * @param changeListener
+     */
+    public void setChangeListener(PhotoChangeListener changeListener) {
+        mChangeListener = changeListener;
+    }
+
+    /**
+     * 是否隐藏指示器,默认不隐藏
+     *
+     * @param hideIndicator
+     */
+    public void setHideIndicator(boolean hideIndicator) {
+        this.hideIndicator = hideIndicator;
+        mIndicator.setVisibility(this.hideIndicator ? INVISIBLE : VISIBLE);
+    }
 
     /*<========================================================================================>*/
     public PhotoTouchView(Context context) {
@@ -176,6 +210,7 @@ public class PhotoTouchView extends LinearLayout implements TouchViewPager.OnPag
     private void includeLayout() {
         View view = LayoutInflater.from(mContext).inflate(R.layout.view_photo, null);
         mViewPager = (TouchViewPager) view.findViewById(R.id.viewpager);
+        mIndicator = (DotIndicator) view.findViewById(R.id.Indicator);
         this.addView(view, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
     }
 
@@ -187,6 +222,8 @@ public class PhotoTouchView extends LinearLayout implements TouchViewPager.OnPag
     @Override
     public void onPageSelected(int position) {
         mCurrentIndex = position;
+        mIndicator.setCurrentPage(position);
+        if (mChangeListener != null) mChangeListener.onPageChanged(position);
     }
 
     @Override
