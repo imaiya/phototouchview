@@ -38,6 +38,7 @@ public class PhotoTouchView extends LinearLayout implements TouchViewPager.OnPag
     private ArrayList<String> mImageList;
     private int mCurrentIndex;
     private DotIndicator mIndicator;
+    public static final String TRANSITION_NAME="tran_iamge";
 
 
     private boolean hideIndicator = false;
