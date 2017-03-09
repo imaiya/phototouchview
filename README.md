@@ -22,7 +22,7 @@ Project.gradle
 
 app.gradle
 
-    compile 'com.github.imaiya:phototouchview:1.1.1'
+    compile 'com.github.imaiya:phototouchview:1.2.1'
 
 ### Maven ###
 	<repositories>
@@ -36,7 +36,7 @@ and
 	<dependency>
 	    <groupId>com.github.imaiya</groupId>
 	    <artifactId>phototouchview</artifactId>
-	    <version>1.1.1</version>
+	    <version>1.2.1</version>
 	</dependency>
 
 ## 使用 ##
