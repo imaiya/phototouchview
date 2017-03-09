@@ -8,7 +8,7 @@
 > - 单击长按事件
 
 ## 引用 ##
-最新版本号[![](https://jitpack.io/v/chenzhenboy/phototouchview.svg)](https://jitpack.io/#chenzhenboy/phototouchview)
+最新版本号[![](https://jitpack.io/v/imaiya/phototouchview.svg)](https://jitpack.io/#imaiya/phototouchview)
 ### Gradle ###
 
 Project.gradle
@@ -22,7 +22,7 @@ Project.gradle
 
 app.gradle
 
-    compile 'com.github.chenzhenboy:phototouchview:1.1.1'
+    compile 'com.github.imaiya:phototouchview:1.1.1'
 
 ### Maven ###
 	<repositories>
@@ -34,7 +34,7 @@ app.gradle
 and
 
 	<dependency>
-	    <groupId>com.github.chenzhenboy</groupId>
+	    <groupId>com.github.imaiya</groupId>
 	    <artifactId>phototouchview</artifactId>
 	    <version>1.1.1</version>
 	</dependency>
@@ -130,7 +130,7 @@ and
 
 ## License ##
 
-    Copyright 2016 chenzhenboy
+    Copyright 2016 imaiya
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
